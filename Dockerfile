@@ -5,7 +5,7 @@ FROM python:3.8-buster
 
 COPY . /lean-upgrade-action/
 
-RUN python -m pip install --upgrade pip mathlibtools
+RUN python -m pip install --upgrade pip gitpython PyGithub
 RUN curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
